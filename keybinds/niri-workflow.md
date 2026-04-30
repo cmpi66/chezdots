@@ -1,5 +1,5 @@
 ---
-title: Hypr Workflow
+title: Niri Workflow
 ---
 
 This is a short doc to document all the up-to-date changes I have for my current workflow 2026-03-17. Similar to LARBS but with no preamble on why CLI and keyboard-driven workflows are superior. I'll just get straight into the meat and potatoes. 
@@ -22,9 +22,9 @@ Only master/stack with a 50/50 split and monocle for fullscreen mode layouts are
 
 <br>
 
-- browser
+- Browser
 - Anki
-- zathura/pdf viewer
+- Zathura/PDF viewer
 - Gimp (in the future for YT)
 - Darktable (in the future for YT)
 - OBS (in the future for YT)
@@ -41,16 +41,16 @@ Only master/stack with a 50/50 split and monocle for fullscreen mode layouts are
 ### 🚀 Programs
 - `Mod+D` -- launch rofi run
 - `Mod+Shift+S` -- launch rofi passmenu
-- `Mod+Enter` -- launch terminal
-- `Mod+Shift+Enter` -- launch tmux session viewer (newt-foot)
-- `Mod+E` -- launch neomutt
-- `Mod+Shift+E` -- launch newsboat
+- `Mod+Enter` -- launch terminal(kitty)
+- `Mod+Shift+Enter` -- launch tmux session viewer (newt)
+- `Mod+E` -- launch aerc
+- `Mod+Shift+E` -- launch miniflux(in browser)
 - `Mod+W` -- launch browser (qutebrowser)
 - `Mod+Shift+W` -- launch tmux quick sessions
 - `Mod+R` -- open currently reading pdf
 - `Mod+Shift+R` -- open pdf/epub picker
 - `Mod+N` -- launch system monitor (btop)
-- `Mod+A` -- launch address book
+- `Mod+A` -- launch address book(abook)
 - `Mod+M` -- launch music player (ncmpcpp)
 - `Mod+Y` -- left click mouse
 - `Mod+Shift+Y` -- launch wiremix (audio control)
@@ -65,11 +65,10 @@ Only master/stack with a 50/50 split and monocle for fullscreen mode layouts are
 - `Mod+Shift+D` -- open system utilities menu
 - `Mod+C` -- clipboard history
 - `Mod+Q` -- kill active window
-- `Mod+Shift+X` -- exit hyprland
+- `Mod+Shift+X` -- exit niri
 - `Mod+Shift+Space` -- toggle all windows floating
 - `Mod+Backspace` -- power menu
 - `Mod+Shift+Backspace` -- lock screen
-- `Alt+R` -- reload hyprland
 - `XF86MonBrightnessDown` -- decrease screen brightness by 5% (laptop only)
 - `XF86MonBrightnessUp` -- increase screen brightness by 5% (laptop only)
 - `Alt+=` -- system volume +5
@@ -86,10 +85,10 @@ Only master/stack with a 50/50 split and monocle for fullscreen mode layouts are
 ### 🧭 Window Navigation / Layout
 - `Mod+L` -- cycle next window
 - `Mod+H` -- cycle previous window
-- `Mod+Shift+H` -- swap left (window or group tab)
-- `Mod+Shift+L` -- swap right (window or group tab)
+- `Mod+Shift+H` -- swap left (window)
+- `Mod+Shift+L` -- swap right (window)
 - `Mod+Space` -- swap with master
-- `Mod+U` -- toggle layout (master/monocle)
+- `Mod+U` -- maximize column (fake fullscreen)
 - `Mod+F` -- toggle fullscreen
 
 <br>

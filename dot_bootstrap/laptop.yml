@@ -133,7 +133,6 @@
           - entr
           - ffmpeg
           - foot
-          - foot-terminfo
           - fuse3
           - gammastep
           - gimp
@@ -142,11 +141,8 @@
           - go
           - grim
           - hypridle
-          - hyprland
           - hyprlock
-          - hyprpaper
           - hyprpicker
-          - hyprshot
           - kguiaddons
           - kitty
           - kwayland5
@@ -234,7 +230,6 @@
           - wireplumber
           - wl-clipboard
           - xdg-desktop-portal
-          - xdg-desktop-portal-hyprland
           - w3m
           - yt-dlp
           - yubikey-manager
@@ -326,7 +321,7 @@
           - dotool-git
           - sc-im
           - task-spooler
-          - stig
+          - stig-git
 
     - name: Remove wheel nopasswd
       lineinfile:
