@@ -24,11 +24,49 @@ disabled = true
 
 
 [golang]
+style = 'blue'
 symbol = " "
+
+[rust]
+style = 'orange'
+symbol = ' '
+
+[lua]
+symbol = ' '
+
+[python]
+style = 'yellow'
+symbol = '  '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = false
+pyenv_prefix = ''
+
+[aws]
+symbol = ' '
+style = 'yellow'
+format = '[$symbol($profile )(\[$duration\] )]($style)'
+
+[docker_context]
+symbol = ' '
+style = 'sky'
+format = " docker [$symbol$context]($style)"
+# detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+# detect_extensions = ['Dockerfile']
+
+
+[jobs]
+symbol = ' '
+style = 'red'
+number_threshold = 1
+format = '[$symbol]($style)'
 
 [directory]
 truncate_to_repo = false
 style = "bold blue"
+format = '[$path ]($style)'
+truncation_length = 3
+truncation_symbol = '…/'
+
 
 [git_branch]
 style = "bold mauve"
