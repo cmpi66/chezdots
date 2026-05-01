@@ -379,16 +379,19 @@ function M.search_by_tag()
     local tag = chosen:match("^(%S+)")
 
     local display = {}
+    local path_lookup = {}
     for _, fp in ipairs(tag_map[tag]) do
-      table.insert(display, fp)
+      local name = vim.fn.fnamemodify(fp, ":t:r")
+      table.insert(display, name)
+      path_lookup[name] = fp
     end
     table.sort(display)
 
-    vim.ui.select(display, { prompt = ("[%s] notes:"):format(tag) }, function(chosen_fp)
-      if not chosen_fp then
+    vim.ui.select(display, { prompt = ("[%s] notes:"):format(tag) }, function(chosen_name)
+      if not chosen_name then
         return
       end
-      vim.cmd("edit " .. chosen_fp)
+      vim.cmd("edit " .. path_lookup[chosen_name])
     end)
   end)
 end
