@@ -96,3 +96,26 @@ vim.keymap.set("n", "<leader>fb", function()
     },
   })
 end, { desc = "Buffers (ui.select + search)" })
+
+-- in your neovim config
+local function navigate(direction, tmux_direction)
+  local win = vim.api.nvim_get_current_win()
+  vim.cmd("wincmd " .. direction)
+  if vim.api.nvim_get_current_win() == win then
+    -- didn't move, so we're at the edge — let tmux handle it
+    vim.fn.system("tmux select-pane -" .. tmux_direction)
+  end
+end
+
+vim.keymap.set("n", "<C-h>", function()
+  navigate("h", "L")
+end)
+vim.keymap.set("n", "<C-j>", function()
+  navigate("j", "D")
+end)
+vim.keymap.set("n", "<C-k>", function()
+  navigate("k", "U")
+end)
+vim.keymap.set("n", "<C-l>", function()
+  navigate("l", "R")
+end)
