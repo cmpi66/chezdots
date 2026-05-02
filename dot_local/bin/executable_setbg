@@ -27,7 +27,9 @@ trueloc="$(readlink -f "$1")" &&
 
 # hyprctl hyprpaper wallpaper DP-1, "$bgloc" && hyprctl hyprpaper wallpaper DP-2, "$bgloc"
 
-pkill swaybg || true
-sleep 0.2
-swaybg -i "$bgloc" &
-disown
+# pkill swaybg || true
+# sleep 0.2
+# swaybg -i "$bgloc" &
+# disown
+
+qs -c noctalia-shell ipc call wallpaper set "$(readlink -f "$bgloc")"

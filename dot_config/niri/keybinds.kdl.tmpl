@@ -34,8 +34,8 @@ binds {
     Mod+q repeat=false hotkey-overlay-title="Close window" { close-window; }
     Mod+Shift+x hotkey-overlay-title="Quit out of niri" { quit; }
     Mod+shift+space       { toggle-window-floating; }
-    Mod+backspace hotkey-overlay-title="Lock screen: hyprlock" { spawn "sysact"; }
-    Mod+shift+backspace hotkey-overlay-title="Lock screen: hyprlock" { spawn "hyprlock"; }
+    Mod+backspace hotkey-overlay-title="Power Menu" { spawn "sysact"; }
+    Mod+shift+backspace hotkey-overlay-title="Lock screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     ALT+minus hotkey-overlay-title="Increase overall system vol" { spawn-sh "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"; }
     ALT+equal hotkey-overlay-title="Decrease overall system vol" { spawn-sh "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"; }
 
