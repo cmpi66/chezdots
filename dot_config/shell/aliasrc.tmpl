@@ -90,7 +90,7 @@ alias musicsync="rsync --archive --verbose --delete-after --update --checksum /h
 {{- end }}
 
 se() {
-  choice="$(find -L "$HOME/.local/bin" -type f | sed "s|$HOME/.local/bin/||" | fzf)"
+  choice="$(fd -L --type f . "$HOME/.local/bin" | sed "s|$HOME/.local/bin/||" | fzf)"
   [[ -n "$choice" ]] && $EDITOR "$(readlink -f "$HOME/.local/bin/$choice")"
 }
 checkapp() {
