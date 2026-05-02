@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # A dmenu wrapper script for system functions.
-export WM="hyprland"
 case "$(readlink -f /sbin/init)" in
 esac
 

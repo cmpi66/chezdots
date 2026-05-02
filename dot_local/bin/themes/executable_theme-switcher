@@ -26,8 +26,6 @@
 
 # i think this has to be in two seperate files or three for now until i get better at bash, one each for change the theme and then one for calling it with tofi
 
-export WM="hyprland"
-
 case "$(printf "tokyonight-storm\ntokyonight-dawn\nrose-pine-moon\nrose-pine-dawn\ncatppuccin-night\ncatppuccin-day" | rofi -dmenu -p 'Switch Theme: ')" in
 'tokyonight-storm') night-theme ;;
 'tokyonight-dawn') day-theme ;;
