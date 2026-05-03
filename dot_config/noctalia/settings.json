@@ -470,7 +470,7 @@
     "notifications": {
         "backgroundOpacity": 1,
         "clearDismissed": true,
-        "criticalUrgencyDuration": 15,
+        "criticalUrgencyDuration": 10,
         "density": "compact",
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": true,
@@ -481,7 +481,7 @@
         "lowUrgencyDuration": 3,
         "monitors": [
         ],
-        "normalUrgencyDuration": 8,
+        "normalUrgencyDuration": 6,
         "overlayLayer": true,
         "respectExpireTimeout": true,
         "saveToHistory": {
