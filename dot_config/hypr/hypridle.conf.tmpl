@@ -1,5 +1,5 @@
 general {
-    lock_cmd = pidof hyprlock || hyprlock
+    lock_cmd = qs -c noctalia-shell ipc call lockScreen lock
     # No need for before_sleep_cmd or after_sleep_cmd since you don’t want suspend
 }
 
@@ -8,13 +8,13 @@ general {
 {{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
 listener {
     timeout = 300
-    on-timeout = pidof hyprlock || hyprlock
+    on-timeout = qs -c noctalia-shell ipc call lockScreen lock
 }
 
 {{- else }}
 listener {
     timeout = 600
-    on-timeout = pidof hyprlock || hyprlock
+    on-timeout = qs -c noctalia-shell ipc call lockScreen lock
 }
 
 {{- end }}
