@@ -262,8 +262,8 @@ overview {
 
 {{- if or (eq .chezmoi.hostname "artixbox") (eq .chezmoi.hostname "artixframe") }}
 switch-events {
-    lid-close { spawn "bash" "-c" "hyprlock" "--immediate"; }
-    lid-open { spawn "bash" "-c" "hyprlock" "--immediate"; }
+    lid-close { spawn "bash" "-c" "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    lid-open { spawn "bash" "-c" "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 }
 {{- end }}
 
