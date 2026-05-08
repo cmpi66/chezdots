@@ -81,10 +81,12 @@ binds {
     // Finer width adjustments.
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
+    Mod+Shift+Minus { switch-preset-column-width; }
+    Mod+Shift+Equal { switch-preset-column-width-back; }
 
     // Finer height adjustments when in column with other windows.
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
+    //Mod+Shift+Minus { set-window-height "-10%"; }
+    //Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Switch focus of multiple monitors
     Mod+Comma      { focus-monitor-previous; }

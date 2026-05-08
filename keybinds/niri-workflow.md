@@ -8,7 +8,9 @@ This is a short doc to document all the up-to-date changes I have for my current
 
 ## Status Bar
 
-I switched to noctalia bar after Floating Pill Waybar. This bar is finally my endgame: minimal distractions and plenty of important information. And only a few things have color, which helps with the distractions. It's an excellent bar despite running at ~300-500 MB, almost 9-10x more than Waybar, but I think it's worth it.
+I switched to Noctalia Bar after Floating Pill Waybar. This bar is finally my endgame: minimal distractions and plenty of important information. And only a few things have color, which helps with the distractions. It's an excellent bar despite running at ~300-500 MB, almost 9-10x more than Waybar, but I think it's worth it.
+
+It's especially useful with Niri to show which windows are open per workspace using icons.
 
 <br>
 
@@ -18,7 +20,10 @@ These are still Luke Smith-esque with my tweaks.
 
 <br>
 
-Only master/stack with a 50/50 split and monocle for fullscreen mode layouts are used. I tried scrolling roughly 3 times, but not for long, less than two days, and I don't think it's for me. Instead I discovered groups/tabs, which I think are superior to scrolling and basically tackle the same problem of having more than two windows on one monitor and the third looking like crap because it's too small. Either way, most of my programs are either terminal or TUI based. The main GUI programs I use are:
+<!-- Only master/stack with a 50/50 split and monocle for fullscreen mode layouts are used. I tried scrolling roughly 3 times, but not for long, less than two days, and I don't think it's for me. Instead I discovered groups/tabs, which I think are superior to scrolling and basically tackle the same problem of having more than two windows on one monitor and the third looking like crap because it's too small. Either way, most of my programs are either terminal or TUI based. The main GUI programs I use are: -->
+
+It turns out scrolling/niri was not a meme. It's extremely useful when combined with groups/tabs. I do keep the amount of windows open per workspace to a minimum anyway, but it's still nice when a new window *doesn't* resize itself. I live mostly in the terminal and use tmux to manage most of my terminal windows and use sessions per task/project. The only GUI programs I use are below:
+
 
 <br>
 
@@ -29,7 +34,6 @@ Only master/stack with a 50/50 split and monocle for fullscreen mode layouts are
 - Darktable (in the future for YT)
 - OBS (in the future for YT)
 
-
 <br>
 
 ### 📊 Bar
@@ -39,11 +43,15 @@ Only master/stack with a 50/50 split and monocle for fullscreen mode layouts are
 <br>
 
 ### 🚀 Programs
+Again, most of the programs I use are basically CLI/TUIs that are well regarded/recommended by Luke Smith, although I swapped for better alternatives to suit my needs. Aerc replaced Neomutt because as wonderful as Luke's mutt-wizard script is, Aerc with IMAP is much simpler for my needs; I don't need offline mail. After running his mail setup for a few years, I realized it was overkill for my needs.
+
+<br>
+
 - `Mod+D` -- launch rofi run
 - `Mod+Shift+S` -- launch rofi passmenu
 - `Mod+Enter` -- launch terminal(kitty)
 - `Mod+Shift+Enter` -- launch tmux session viewer (newt)
-- `Mod+E` -- launch aerc
+- `Mod+E` -- launch aerc (email)
 - `Mod+Shift+E` -- launch miniflux(in browser)
 - `Mod+W` -- launch browser (qutebrowser)
 - `Mod+Shift+W` -- launch tmux quick sessions
@@ -83,22 +91,25 @@ Only master/stack with a 50/50 split and monocle for fullscreen mode layouts are
 <br>
 
 ### 🧭 Window Navigation / Layout
-- `Mod+L` -- cycle next window
-- `Mod+H` -- cycle previous window
+- `Mod+L` -- focus left column
+- `Mod+H` -- focus right column
 - `Mod+Shift+H` -- swap left (window)
 - `Mod+Shift+L` -- swap right (window)
-- `Mod+Space` -- swap with master
+- `Mod+[` -- focus firt column
+- `Mod+]` -- focus last column
+- `Mod+Shift+[` -- move column to first (window)
+- `Mod+Shift]L` -- move column to last (window)
+- `Mod+Shift+Space` -- toggle floating
 - `Mod+U` -- maximize column (fake fullscreen)
 - `Mod+F` -- toggle fullscreen
+- `Mod+O` -- toggle overview (not used but nice to have)
 
 <br>
 
 ### 🧩 Groups
 - `Mod+G` -- toggle group
-- `Mod+Shift+G` -- move window out of group
-- `Mod+I` -- lock/unlock group
-- `Mod+Tab` -- move window into group (left)
-- `Mod+Shift+Tab` -- move window into group (right)
+- `Mod+Tab` -- move window into or out of group (group left, window right)
+- `Mod+Shift+Tab` -- move window into or out of group (group right window left)
 
 <br>
 
@@ -109,8 +120,10 @@ Only master/stack with a 50/50 split and monocle for fullscreen mode layouts are
 <br>
 
 ### 📐 Resize
-- `Mod+-` -- shrink window
-- `Mod+=` -- expand window
+- `Mod+minus` -- shrink window width
+- `Mod+equal` -- expand window width
+- `Mod+Shift+minus` -- cycle through preset widths
+- `Mod+Shift+equal` -- cycle through preset widths in reverse
 
 <br>
 
