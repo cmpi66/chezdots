@@ -20,13 +20,13 @@ vim.keymap.set("n", "<CR>", function()
     return
   end
 
-  local fullpath = vim.fn.expand("~/.local/.src/zettlekasten/" .. path)
+  local fullpath = vim.fn.expand("~/.local/share/notes/zettlekasten/" .. path)
   if vim.fn.filereadable(fullpath) == 1 then
     vim.cmd("edit " .. fullpath)
   else
     -- Try to match filename without .md
     local stem = path:gsub("%.md$", "")
-    local handle = io.popen("fd --type f --extension md . ~/.local/.src/zettlekasten")
+    local handle = io.popen("fd --type f --extension md . ~/.local/share/notes/zettlekasten")
     if not handle then
       return
     end
