@@ -1,43 +1,53 @@
 #!/usr/bin/env bash
-
-TERMINAL="kitty"
 BROWSER="qutebrowser"
 BROWSER2="stupid-web"
-
-launch_lighter_tools() {
-  hyprctl dispatch exec zettle-ema-kitty && hyprctl dispatch exec zathura && hyprctl dispatch exec initial
-}
+SESSION="initial"
 
 check_internet() {
-
-  # wait for default route
   while ! ip route | grep -q "^default"; do
     sleep 0.5
   done
-
-  # wait for internet reachability
   while ! ping -c1 -W1 1.1.1.1 >/dev/null 2>&1; do
     sleep 0.5
   done
-  launch_browsers
 }
 
 launch_browsers() {
-  hyprctl dispatch exec $BROWSER
-  hyprctl dispatch exec $BROWSER2
-  sleep 1
-  hyprctl dispatch fullscreen 1
+  niri msg windows | grep -iq org.qute || $BROWSER &
+  while ! niri msg windows | grep -iq org.qute; do
+    sleep 0.3
+  done
 
+  niri msg action toggle-column-tabbed-display
+
+  niri msg windows | grep -iq stupid-web || $BROWSER2 &
+  while ! niri msg windows | grep -iq stupid-web; do
+    sleep 0.3
+  done
+
+  niri msg action consume-or-expel-window-left
 }
 
-# I'll just put workpace 3 as fullscreen by default
-move_work_spaces() {
-  hyprctl dispatch workspace 1
-}
+# --- main flow ---
+check_internet
 
-# launch_lighter_tools && check_internet && move_work_spaces
+# skip everything if already running
+if niri msg windows | grep -iq tmux-initial; then
+  exit 0
+fi
 
-# jsut keeping it light for now until i figure out th race conditions.
-# check_internet && launch_lighter_tools
+# launch tmux + kitty
+if tmux has-session -t "$SESSION" 2>/dev/null; then
+  kitty --title tmux-initial --class tmux-session -e tmux attach-session -t "$SESSION" &
+else
+  tmux new-session -s "$SESSION" -n initial -d
+  kitty --title tmux-initial --class tmux-session -e tmux attach-session -t "$SESSION" &
+fi
 
-launch_lighter_tools
+# needed to keep term on workspace 1
+while ! niri msg windows | grep -iq tmux-initial; do
+  sleep 0.3
+done
+
+niri msg action focus-workspace-down
+launch_browsers

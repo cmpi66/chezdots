@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Stupid-Web
+StartupWMClass=stupid-web
+GenericName=Web Browser
+Comment=Relaxed qutebrowser settings for the stupid web
+Icon=qutebrowser
+Type=Application
+Categories=Network;WebBrowser;
+Exec=qutebrowser --basedir ~/.config/stupid-web/ --config-py ~/.config/stupid-web/config.py --desktop-file-name stupid-web
+Terminal=false
+StartupNotify=true

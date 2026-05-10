@@ -3,7 +3,6 @@ Name=Qutebrowser RSS
 StartupWMClass=qutebrowser-rss
 GenericName=Web Browser
 Comment=RSS feed reader using qutebrowser
-Icon=qutebrowser
 Icon=/home/chris/.local/share/chars/miniflux-light.svg
 Type=Application
 Categories=Network;WebBrowser;

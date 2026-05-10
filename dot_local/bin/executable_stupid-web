@@ -2,4 +2,5 @@
 
 qutebrowser \
   --basedir ~/.config/stupid-web/ \
-  --config-py ~/.config/stupid-web/config.py
+  --config-py ~/.config/stupid-web/config.py \
+  --desktop-file-name stupid-web
